@@ -18,8 +18,8 @@ public class RoomServiceImpl implements RoomService {
 	public Room createRoom(Room room) {
 
 		// Check if the Room ID already exists in the database
-		if (room.getId() != null && roomRepository.existsById(room.getId())) {
-			throw new RoomAlreadyExistsException("Room with ID " + room.getId() + " already exists.");
+		if (room.getRoomId() != null && roomRepository.existsById(room.getRoomId())) {
+			throw new RoomAlreadyExistsException("Room with Room ID " + room.getRoomId() + " already exists.");
 		}
 
 		// Save the new Room
